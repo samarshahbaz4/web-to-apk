@@ -1,6 +1,6 @@
 package com.example.najmus.webtoapp;
 /*====================================
-    Author : NAJMUS SEEMAB
+    Author : Samar Shahbaz
 ======================================*/
 
 import android.app.Activity;
@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
         mywebView =(WebView)findViewById ( R.id.webView );
         WebSettings webSettings = mywebView.getSettings ();
         webSettings.setJavaScriptEnabled ( true );
-        mywebView.loadUrl ( "https://zerda.netlify.com" );
+        mywebView.loadUrl ( "https://samarshahbaz4.github.io/samar-chat-ui/" );
         mywebView.setWebViewClient ( new WebViewClient () );//prevents our url to open in another browser
 
     }
