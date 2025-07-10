@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Android APK Build
 
 on:
   push:
@@ -7,29 +7,28 @@ on:
 
 jobs:
   build:
-    name: Build APK
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: ☕ Set up Java (Temurin JDK 17)
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 🔓 Grant execute permission to gradlew
+      - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: 🧰 Set up Gradle
+      - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: 🏗️ Build Debug APK
+      - name: Build Debug APK
         run: ./gradlew assembleDebug
 
-      - name: 📦 Upload Debug APK
+      - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: debug-apk
